@@ -10,16 +10,117 @@
 		<form method="POST" action="form.php"> <!-- metodo é como vou enviar o formulário (envia pela URL porém evitar o método GET pois no caso da senha irá aparecer no navegador) e action é pra onde vai, por exemplo para qual arquivo será enviado-->
 			<div class="form-group">
 				<label for="nome">NOME</label>
-				<input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite seu nome">
+				<input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite seu nome" autofocus="" tabindex="1" readonly><!--pré seleciona este campo para começar a escrever. O tabindex indica a sequência de tabs que será exibida-->
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email" name="email" id="email" class="form-control" required placeholder="seu@email.com.br">
+				<input type="email" name="email" id="email" class="form-control" required placeholder="seu@email.com.br" tabindex="2" disabled>
 			</div>
 			<div class="form-group">
 				<label for="nascimento">Nascimento</label>
 				<input type="date" name="nascimento" id="nascimento" class="form-control" required placeholder="dd/mm/aaaa" required min="2017-02-01" required max="2017-12-01"> <!-- data mínima ano/mes/dia-->
 			</div>
+			<div class="form-group">
+				<label>Sexo</label>
+				<input type="radio" name="sexo" id="masculino" checked> 
+				<label for="masculino" >Masculino</label>
+				<input type="radio" name="sexo" id="feminino"> <!--o for sempre faz referência ao id e não ao name-->
+				<!--o name agrupa os radio button, se o name for diferente ele entende como coisas diferentes-->
+				<label for="feminino" >Feminino</label>
+			</div>
+			<div class="form-group">
+				<label for="li">Li o contrato</label>
+				<input type="checkbox" name="li" id="li" required checked>
+			</div>
+			<div class="form-group">
+				<label for="volume">Volume</label>
+				<input type="range" name="volume" id="volume" min="0" max="100" value="50">
+			</div>			
+			<div class="form-group">
+				<label for="meter">Bateria</label>
+				<meter name="meter" min="0" max="100" value="10" low="15"></meter> 
+			</div>
+			<div class="form-group">
+				<label for="progress">Carregando</label>
+				<progress min="0" max="100" value="20">60%</progress> 
+			</div>
+			<div class="form-group">
+				<label for="ano">Ano Fabricação</label>
+				<input type="number" name="ano" id="ano" min="2000" max="2020" value="2016" step="2">
+			</div>
+			<div class="form-group">
+				<label for="cor">Cor</label>
+				<input type="color" name="cor" id="cor">
+			</div>
+			<div class="form-group">
+				<label for="url">URL</label>
+				<input type="url" name="url" id="url" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="busca">Busca</label>
+				<input type="search" name="busca" id="busca" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="mensagem">Mensagem</label>
+				<textarea name="mensagem" id="mensagem" class="form-control"></textarea> 
+			</div>
+
+			<div class="form-group">
+				<label for="estados">Estado</label>
+				<select name="estados" id="estados" tabindex="4">
+					<option value="SP">São Paulo</option>
+					<option value="MG" selected="">Minas Gerais</option>
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="SC">Santa Catarina</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="estados" >Estado OPT</label>
+				<select name="estados" id="estados" tabindex="3">
+					<optgroup label="Sudeste">
+						<option value="SP">São Paulo</option>
+						<option value="MG" selected="">Minas Gerais</option>
+					</optgroup>
+					<optgroup label="Resto">
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="BA">Bahia</option>
+					</optgroup>
+				</select>
+			</div>
+
+			<input type="hidden" name="id" value="1">
+			<div class="form-group">
+				<label for="senha">Senha</label>
+				<input type="password" name="senha" id="senha" class="form-control">				
+			</div>
+			<div class="form-group">
+				<label for="mes">Mês</label>
+				<input type="month" name="mes" id="mes" class="form-control">				
+			</div>
+
+			<div class="form-group">
+				<label for="semana">Semanha</label>
+				<input type="week" name="semana" id="semana" class="form-control">				
+			</div>
+
+			<div class="form-group">
+				<label for="time">Hora</label>
+				<input type="time" name="time" id="time" class="form-control" tabindex="5">				
+			</div>
+
+			<div class="form-group">				
+				<input type="text" list="navegadores">			
+				<datalist id="navegadores">
+					<option value="Chrome">
+					<option value="FireFox">
+					<option value="Safari">
+				</datalist>	<!--Gera uma lista de sugestão e caso não estja na lista ele envia mesmo assim-->
+			</div>
+			
 			<div>
 				<button type="submit" class="btn btn-primary">Cadastrar</button>
 			</div>
