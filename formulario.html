@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Curso Completo do Desenvolvedor Web</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	</head>
+	<body>			
+		<form method="POST" action="form.php"> <!-- metodo é como vou enviar o formulário (envia pela URL porém evitar o método GET pois no caso da senha irá aparecer no navegador) e action é pra onde vai, por exemplo para qual arquivo será enviado-->
+			<div class="form-group">
+				<label for="nome">NOME</label>
+				<input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite seu nome">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" class="form-control" required placeholder="seu@email.com.br">
+			</div>
+			<div class="form-group">
+				<label for="nascimento">Nascimento</label>
+				<input type="date" name="nascimento" id="nascimento" class="form-control" required placeholder="dd/mm/aaaa" required min="2017-02-01" required max="2017-12-01"> <!-- data mínima ano/mes/dia-->
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</div>
+		</form>
+		
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
